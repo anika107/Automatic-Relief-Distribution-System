@@ -20,23 +20,24 @@ class status{
         $message = "message";
         
         $get_user = "select 
-        (SELECT COUNT(*)FROM affected WHERE status = 'affected') as affected,
-        (SELECT COUNT(*)FROM affected WHERE status = 'recovered') as recovered,
-        (SELECT COUNT(*)FROM affected WHERE status = 'dead') as dead
-         from affected";
+						sum(case when admission_status = 'released' and living_status = 'alive' then 1 else 0 end) as recovered,
+						sum(case when admission_status = 'released' and living_status = 'dead' then 1 else 0 end) as deaths,
+						sum(case when admission_status = 'admitted' and critical_status = 'yes' then 1 else 0 end) as critical,
+						sum(case when admission_status = 'admitted' then 1 else 0 end) as active
+					from patient_info";
         $getJson = $conn->prepare($get_user);
         $getJson->execute();
         $result = $getJson->fetchAll(PDO::FETCH_ASSOC);
-       
         if(count($result) > 0) 
         {        
             foreach($result as $data)
             {
                 array_push($response,
                 array(
-                                    'affected'=>$data['affected'],
+                                    'active'=>$data['active'],
+                                    'critical'=>$data['critical'],
                                     'recovered'=>$data['recovered'],
-                                    'dead'=>$data['dead']
+                                    'deaths'=>$data['deaths']
                 )); 
             }
             echo json_encode(array("response"=>$response,$status=>1, $message=>"Successful"));            //  On Successful Login redirects to home.php
