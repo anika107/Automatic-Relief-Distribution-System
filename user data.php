@@ -1,3 +1,8 @@
+<?php
+	$Write="<?php $" . "UIDresult=''; " . "echo $" . "UIDresult;" . " ?>";
+	file_put_contents('UIDContainer.php',$Write);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -19,8 +24,8 @@
 			margin: auto;
 			padding: 0;
 			overflow: hidden;
-			background-color: #4CAF50;
-			width: 70%;
+			background-color: #1abc9c;
+			width: 100%;
 		}
 
 		ul.topnav li {float: left;}
@@ -33,20 +38,20 @@
 			text-decoration: none;
 		}
 
-		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}
+		ul.topnav li a:hover:not(.active) {background-color: #333;}
 
 		ul.topnav li a.active {background-color: #333;}
 
 		ul.topnav li.right {float: right;}
 
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 1300px) {
 			ul.topnav li.right, 
 			ul.topnav li {float: none;}
 		}
 		
 		.table {
 			margin: auto;
-			width: 90%; 
+			width: 100%; 
 		}
 		
 		thead {
@@ -58,27 +63,26 @@
 	</head>
 	
 	<body>
-		<h2>Vendor Machine User Database</h2>
+		<br>
 		<ul class="topnav">
 			<li><a href="home.php">Home</a></li>
 			<li><a class="active" href="user data.php">User Data</a></li>
 			<li><a href="registration.php">Registration</a></li>
 			<!-- <li><a href="read tag.php">Scan Card</a></li> -->
+			<li><a href="live_chart.php">Live Data</a></li>
 		</ul>
-		<br>
+		<h2>User Information</h2>
 		<div class="container">
-            <div class="row">
-                <h3>User Data Table</h3>
-            </div>
+            
             <div class="row">
                 <table class="table table-striped table-bordered">
                   <thead>
-                    <tr bgcolor="#10a0c5" color="#FFFFFF">
+                    <tr bgcolor="#1E90FF" color="#FFFFFF">
                       <th>Name</th>
                       <th>ID</th>
 					  <th>NID</th>
 					  <th>Gender</th>
-                      <th>No of Member</th>
+                      <th>Family Member</th>
 					  <th>Address</th>
 					  <th>Date</th>
 					  <th>Total</th>
@@ -109,6 +113,7 @@
                   ?>
                   </tbody>
 				</table>
+				<br>
 			</div>
 		</div> <!-- /container -->
 	</body>
