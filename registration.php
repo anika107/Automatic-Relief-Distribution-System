@@ -5,11 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/w3css/3/w3.css">
-		<script src="js/bootstrap.min.js"></script>
-		<script src="jquery.min.js"></script>
 		
 		<style>
 		
@@ -50,11 +46,14 @@
 
 		ul.topnav li.right {float: right;}
 
-		/* @media screen and (max-width: 600px) {
-			ul.topnav li.right, 
-			ul.topnav li {float: none;}
-		} */
-
+		.topnav input[type=text] {
+		float: right;
+		padding: 5px;
+		margin-top: 7px;
+		margin-right: 16px;
+		border: none;
+		font-size: 17px;
+		}
 		/* Style the input container */
 		.input-container {
 		display: flex;
@@ -110,6 +109,7 @@
 			<li><a class="active" href="registration.php">Registration</a></li>
 			<!-- <li><a href="read tag.php">Scan Card</a></li> -->
 			<li><a href="live_chart.php">Live Data</a></li>
+			<input type="text" placeholder="Search">
 		</ul>
 		<h2 align="center">Vending Machine User Registration</h2>
 
