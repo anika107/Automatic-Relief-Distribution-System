@@ -16,13 +16,12 @@ foreach ($result as $peopleData) {
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="graphite.js"></script>
     <script src="bar_chart.js"></script>
     <meta charset="utf-8">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
       
@@ -129,6 +128,14 @@ foreach ($result as $peopleData) {
     .chart-div{
         margin-bottom: 20px;
     }
+    .topnav input[type=text] {
+		float: right;
+		padding: 5px;
+		margin-top: 7px;
+		margin-right: 16px;
+		border: none;
+		font-size: 17px;
+		}
 </style>
 
   </head>
@@ -141,6 +148,7 @@ foreach ($result as $peopleData) {
 			<li><a href="registration.php">Registration</a></li>
 			<!-- <li><a href="read tag.php">Scan Card</a></li> -->
 			<li><a class="active" href="live_chart.php">Live Data</a></li>
+      <input type="text" placeholder="Search">
 		</ul>
     <h2>Vending Machine Live Data</h2>
     <div id="chart_container" class="centre">
