@@ -8,10 +8,10 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link href="http://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet" />
-	<link href="default.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
-	<link rel="stylesheet" type="text/css" href="http://localhost/project/cssTable/util.css">
-	<link rel="stylesheet" type="text/css" href="http://localhost/project/csstable/main.css">
+	<link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/cssTable/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/cssTable/main.css">
 	<title>Latest Update</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
@@ -27,8 +27,8 @@
             
                 <div id="menu">
                     <ul>
-                        <li><a href="http://localhost/project/index.php">Homepage</a></li>
-                        <li class="active"><a href="http://localhost/project/relief.php">Latest Update</a></li>
+                        <li><a href="index.php">Homepage</a></li>
+                        <li class="active"><a href="live_relief.php">Latest Update</a></li>
                         <li><a href="http://localhost/project/logout.php">Log Out</a></li>
                     </ul>
                 </div>
@@ -110,8 +110,8 @@
 		
                 <div id="menu">
                     <ul>
-                        <li class="active"><a href="http://localhost/project/index.php">Homepage</a></li>
-                        <li><a href="http://localhost/project/login.php">Log In</a></li>
+                        <li class="active"><a href="index.php">Homepage</a></li>
+                        <li><a href="login.php">Log in</a></li>
                     </ul>
                 </div>
        
