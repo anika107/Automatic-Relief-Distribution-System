@@ -77,25 +77,6 @@ CREATE TABLE `patient_info` (
   `city` varchar(255),
   `admission_date` date NOT NULL,
   `admission_status` varchar(255) NOT NULL,
-  `release_date` date NOT NULL,
-  `critical_status` varchar(255) NOT NULL DEFAULT 'no',
-  `living_status` varchar(255) NOT NULL default 'alive'
-);
-
-CREATE TABLE `patient_info` (
-  `patient_id` int(11) AUTO_INCREMENT PRIMARY KEY,
-  `last_name` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
-  `age` int NOT NULL,
-  `nid_birth_certificate` varchar(255) UNIQUE NOT NULL,
-  `house` varchar(255),
-  `road` varchar(255),
-  `area` varchar(255),
-  `district` varchar(255) NOT NULL,
-  `zipcode` varchar(255),
-  `city` varchar(255),
-  `admission_date` date NOT NULL,
-  `admission_status` varchar(255) NOT NULL,
   `release_date` date,
   `critical_status` varchar(255),
   `living_status` varchar(255) DEFAULT 'alive'
