@@ -9,29 +9,28 @@
     <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Card Holder Data | Covid19</title>
+    <title> User Registration | PS </title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" >
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic"/>
 
     <!-- Css Styles -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/flaticon.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/barfiller.css">
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="css/slicknav.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/barfiller.css">
+    <link rel="stylesheet" type="text/css" href="../css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/default.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/fonts.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="../css/cssTable/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/csstable/main.css">  
     
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Didact+Gothic"/>
-	<link rel="stylesheet" type="text/css" href="css/default.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="css/fonts.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="css/cssTable/util.css">
-    <link rel="stylesheet" type="text/css" href="css/csstable/main.css">  
     <style>
-		
 		html {
 			font-family: Arial;
 			display: inline-block;
@@ -127,37 +126,6 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Offcanvas Menu Section Begin -->
-    <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
-        <div class="canvas-close">
-            <i class="fa fa-close"></i>
-        </div>
-        <div class="canvas-search search-switch">
-            <i class="fa fa-search"></i>
-        </div>
-        <nav class="canvas-menu mobile-menu">
-            <?php if (isset($_SESSION['logged']) && $_SESSION['username'] == "admin") { ?>
-            <ul>
-                <li><a href="./index.php">Home</a></li>
-                <li><a href="./registration.php">Relief Card Registration</a></li>
-                <li><a href="./user data.php">Card Holder Data</a></li>
-                <li><a href="./live_chart.php">Live Updates</a></li>
-                <li><a href="./logout.php">Log Out</a></li>
-            </ul>
-            
-            <?php } else header('Location: http://localhost:8080/rfid/index.php'); ?> 
-        </nav>
-        <div id="mobile-menu-wrap"></div>
-        <div class="canvas-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-        </div>
-    </div>
-    <!-- Offcanvas Menu Section End -->
-
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
@@ -165,32 +133,35 @@
                 <div class="col-lg-3">
                     <div class="logo">
                         <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                            <img src="../template/img/logo.png" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="nav-menu">
                         <?php if (isset($_SESSION['logged']) && $_SESSION['username'] == "admin") { ?>
-                        <ul>
-                            <li><a href="./index.php">Home</a></li>
-                            <li><a href="./registration.php">Relief Card Registration</a></li>
-                            <li><a href="./user data.php">Card Holder Data</a></li>
-                            <li><a href="./live_chart.php">Live Updates</a></li>
-                            <li><a href="./logout.php">Log Out</a></li>
-                        </ul>
-
-                        <?php } else { ?>
-
-                        <ul>
-                            <li><a href="./index.php">Home</a></li>
-                            <li><a href="./live_chart.php">Live Updates</a></li>
-                            <li><a href="./team">Our Team</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
-                            <li><a href="./login.php">Admin Log In</a></li>
-                        </ul>
-
-                        <?php } ?>
+                            <ul>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="#">Relief Card</a>
+                                    <ul class="dropdown">
+                                        <li class="active"><a href="./registration.php">New Registration</a></li>
+                                        <li><a href="./user_data.php">User Information</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./live_relief.php">Relief Distribution Data</a></li>
+                                <li><a href="./live_covid19.php">Covid19 Update</a></li>
+                                <li><a href="./logout.php">Log Out</a></li>
+                            </ul>
+							
+                        <?php } else { ?> 
+							<ul>
+                                <li><a href="./index.php">Home</a></li>
+                                <li><a href="./live_relief.php">Relief Distribution Data</a></li>
+                                <li><a href="./live_covid19.php">Covid19 Update</a></li>
+                                <li><a href="./login.php">Admin Log In</a></li>
+                            </ul>
+						<?php } ?> 
+                        
                     </nav>
                 </div>
                 <div class="col-lg-3">
@@ -213,14 +184,13 @@
         </div>
     </header>
     <!-- Header End -->
-
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="image/card9.png">
+    <section class="breadcrumb-section set-bg" data-setbg="../image/card9.png">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>RELIEF CARD HOLDER INFO</h2>
+                        <h2>Vending Machine User Registration</h2>
                     </div>
                 </div>
             </div>
@@ -232,12 +202,8 @@
     	<div id="wrapper">
             <div id="three-column" class="container">
 				<div class="title">
-                    <h2>Vending Machine User Registration</h2>
-                    
-					<p style="font-size: 24px;color: #757575; padding-top: 20px;">All information regarding the card holders can be viewed and edited here.</p>
-				</div>
-        
-				
+					<p style="font-size: 24px;color: #757575; padding-top: 20px;">Please input correct data in the fields.</p>
+				</div>		
             </div>	
             <div style="margin: auto; max-width:500px; border-style: solid; border-color: #1E90FF">
                 <div class="row">
@@ -246,51 +212,43 @@
                 <br>
                 <form action="insertDB.php" style="max-width:400px; margin:auto" method="post" >
                     <div class="input-container">
-                        <i class="fa fa-id-badge icon"></i>
-                        <input class="input-field" type="text" placeholder="Card ID No" name="id" required>
-                    </div>
-    
-                    <div class="input-container">
                         <i class="fa fa-user icon"></i>
                         <input class="input-field" type="text" placeholder="Full Name" name="name" required>
                     </div>
-    
                     <div class="input-container">
                         <i class="fa fa-id-card icon"></i>
                         <input class="input-field" type="text" placeholder="NID / Birth Certificate No" name="nid" required>
                     </div>
-    
-                    
                     <div class="input-container">
-    
-                            <i class="fa fa-venus-mars icon"></i>
+                        <i class="fa fa-venus-mars icon"></i>
                             <select name="gender" >
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Female">Other</option>
                             </select>
                     </div>
-                    
                     <div class="input-container">
                     <i class="fa fa-calculator icon"></i>
                     <input class="input-field" type="text" placeholder="No of Family Member" name="member" required>
                     </div>
-                    
                     <div class="input-container">
                         <i class="fa fa-address-book icon"></i>
-                        <input class="input-field" type="text" placeholder="Address" name="address" required>
+                        <input class="input-field" type="text" placeholder="Upazilla" name="upazilla" required>
                     </div>
-                    
-                    
+                    <div class="input-container">
+                        <i class="fa fa-address-book icon"></i>
+                        <input class="input-field" type="text" placeholder="District" name="district" required>
+                    </div>
+                    <div class="input-container">
+                        <i class="fa fa-address-book icon"></i>
+                        <input class="input-field" type="text" placeholder="Division" name="division" required>
+                    </div>
                     <button type="submit" class="btn">Register</button>
-                
                 </form>
                 <br>
             </div> 
         </div>
      
-
-
     <!-- Footer Section Begin -->
     <section class="footer-section">
         <div class="container">
@@ -306,16 +264,14 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/masonry.pkgd.min.js"></script>
-    <script src="js/jquery.barfiller.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/masonry.pkgd.min.js"></script>
+    <script src="../js/jquery.barfiller.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
-
 </html>
