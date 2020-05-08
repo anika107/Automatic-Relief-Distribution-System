@@ -73,7 +73,7 @@ foreach ($result as $peopleData) {
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="http://localhost/covid19/php/index.php">
                             <img src="../template/img/logo.png" alt="">
                         </a>
                     </div>

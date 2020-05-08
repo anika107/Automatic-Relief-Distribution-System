@@ -115,7 +115,7 @@
             <div id="three-column" class="container">
 				<div class="title">
 					<h2>Relief Card User Info</h2>
-					<p style="font-size: 24px;color: #757575; padding-top: 20px;">All information regarding the card users can be viewed and edited here.</p>
+					
 				</div>
         
 				<div class="table100 ver5 m-b-110">
@@ -124,9 +124,19 @@
 							<tr class="row100 head" >
 								<th class="column100 column1" data-column="column1">Name</th>
 								<th class="column100 column1" data-column="column2">Card No.</th>
-								<th class="column100 column1" data-column="column3">Family Size</th>
-								<th class="column100 column1" data-column="column4">Received Relief Package</th>
-								<th class="column100 column1" data-column="column5" colspan="2">Action</th>
+
+								<th class="column100 column1" data-column="column3">NID/Birth Cert</th>
+								<th class="column100 column1" data-column="column3">Gender</th>
+
+								<th class="column100 column1" data-column="column1">Family Size</th>
+
+								<th class="column100 column1" data-column="column2">Upazilla</th>
+
+                                <th class="column100 column1" data-column="column2">District</th>
+
+								<th class="column100 column1" data-column="column3">Card Registration Date</th>
+
+								<th class="column100 column1" data-column="column3">Received Relief Package</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -138,12 +148,13 @@
 										echo '<tr class="row100">';
 										echo '<td class="column100 column1" data-column="column1">' . $row['name'] . "</td>";
 										echo '<td class="column100 column1" data-column="column2">' . $row['id'] . "</td>";
+										echo '<td class="column100 column1" data-column="column3">' . $row['nid'] . "</td>";
+										echo '<td class="column100 column1" data-column="column3">' . $row['gender'] . "</td>";
 										echo '<td class="column100 column1" data-column="column3">' . $row['family_size'] . "</td>";
-										echo '<td class="column100 column1" data-column="column4">' . $row['relief_collected'] . "</td>";
-										echo '<td> <a class="primary-btn btn-normal appoinment-btn" href="details.php?id='.$row['id'].'"  style = border: 1px solid #002933;>Details</a>';
-                                        echo ' ';
-                                        echo '<td> <a class="primary-btn btn-normal appoinment-btn" href="user_update.php?id='.$row['id'].'">Edit</a>';
-                                        echo ' ';
+                                        echo '<td class="column100 column1" data-column="column3">' . $row['upazilla'] . "</td>";
+                                        echo '<td class="column100 column1" data-column="column3">' . $row['district'] . "</td>";
+										echo '<td class="column100 column1" data-column="column3">' . $row['registration_date'] . "</td>";
+										echo '<td class="column100 column1" data-column="column3">' . $row['relief_collected'] . "</td>";
 										echo "</tr>";
 									}
                                 Database::disconnect();

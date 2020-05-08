@@ -12,15 +12,17 @@
         $name = $_POST['name'];
         $nid = $_POST['nid'];
         $gender = $_POST['gender'];
-        $member = $_POST['member'];
-        $address = $_POST['address'];
+        $member = $_POST['family_size'];
+        $upazilla = $_POST['upazilla'];
+		$district = $_POST['district'];
+		$division = $_POST['division'];
          
         $pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "UPDATE info  set name = ?,nid =?, gender =?, member =?, address =? WHERE id = ?";
+		$sql = "UPDATE card_user_info  set name = ?,nid =?, gender =?, family_size =?, upazilla =?, district =?, division =? WHERE id = ?";
 		$q = $pdo->prepare($sql);
-		$q->execute(array($name,$nid,$gender,$member,$address,$id));
+		$q->execute(array($name,$nid,$gender,$member,$upazilla,$district,$division,$id));
 		Database::disconnect();
-		header("Location: user data.php");
+		header("Location: user_data.php");
     }
 ?>

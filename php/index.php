@@ -9,7 +9,7 @@
     <meta name="keywords" content="Gym, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> PS </title>
+    <title> Automatic Relief Distribution System </title>
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" >
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="http://localhost/covid19/php/index.php">
                             <img src="../template/img/logo.png" alt="">
                         </a>
                     </div>
@@ -99,7 +99,7 @@
     <!-- Hero Section Begin -->
     <section class="hero-section">
         <div class="hs-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="../image/green2.jpg">
+            <div class="hs-item set-bg" data-setbg="../image/green.jpg">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 offset-lg-6">
