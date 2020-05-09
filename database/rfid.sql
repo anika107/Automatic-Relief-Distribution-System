@@ -94,26 +94,25 @@ CREATE TABLE `patient_info` (
 
 INSERT INTO `patient_info` (`patient_id`, `last_name`, `first_name`, `age`, `nid_birth_certificate`, `house`, `road`, `area`, `district`, `zipcode`, `division`, `admission_date`, `admission_status`, `release_date`, `critical_status`, `living_status`) VALUES
 (1, 'Ahmed', 'Fakhruddin', 50, '33840991', '1', '10', 'Banani', 'Dhaka', '1213', 'Dhaka', '2020-04-04', 'admitted', NULL, 'yes', 'alive'),
-(2, 'Bhottacharjyo', 'Priyanka', 51, '948989441', '11', '5', 'Gulshan', 'Dhaka', '1213', '', '2020-04-16', 'admitted', NULL, 'no', 'alive'),
-(3, 'Hossain', 'Sayed', 30, '149949489', '', '', 'Badda', 'Dhaka', '1212', '', '2020-04-07', 'admitted', NULL, 'no', 'alive'),
+(2, 'Bhottacharjyo', 'Priyanka', 51, '948989441', '11', '5', 'Gulshan', 'Dhaka', '1213', 'Dhaka', '2020-04-16', 'admitted', NULL, 'no', 'alive'),
+(3, 'Hossain', 'Sayed', 30, '149949489', '', '', 'Badda', 'Dhaka', '1212', 'Dhaka', '2020-04-07', 'admitted', NULL, 'no', 'alive'),
 (4, 'Farid', 'Dewan', 41, '318744780', '', '', 'Rangpur', 'Kurigram', '5660', 'Rangpur', '2020-04-15', 'admitted', NULL, 'yes', 'dead'),
-(5, 'Rouf', 'Abdur', 56, '489913939', '', '', 'Cumilla', 'Daudkandi', '3516', '', '2020-04-12', 'admitted', NULL, 'yes', 'alive'),
-(6, 'Howladar', 'Anika', 29, '8129203', '10', '30', 'Khulna', 'jhenaidah ', '7320', '', '2020-04-12', 'released', '2020-04-19', 'no', 'dead'),
-(7, 'Deb', 'Nandita', 72, '9193903', '', '', 'Rajshahi', 'Natore', '6400', '', '2020-04-02', 'released', '2020-04-09', 'no', 'alive'),
-(8, 'Dey', 'Pranto', 19, '21333893', '', '', 'Dhaka', 'Manikganj', '1801', '', '2020-04-03', 'released', '2020-04-15', 'no', 'dead'),
+(5, 'Rouf', 'Abdur', 56, '489913939', '', '', 'Cumilla', 'Daudkandi', '3516', 'Chittagong', '2020-04-12', 'admitted', NULL, 'yes', 'alive'),
+(6, 'Howladar', 'Anika', 29, '8129203', '10', '30', 'Khulna', 'jhenaidah ', '7320', 'Khulna', '2020-04-12', 'released', '2020-04-19', 'no', 'dead'),
+(7, 'Deb', 'Nandita', 72, '9193903', '', '', 'Rajshahi', 'Natore', '6400', 'Rajshahi', '2020-04-02', 'released', '2020-04-09', 'no', 'alive'),
+(8, 'Dey', 'Pranto', 19, '21333893', '', '', 'Dhaka', 'Manikganj', '1801', 'Dhaka', '2020-04-03', 'released', '2020-04-15', 'no', 'dead'),
 (9, 'Chottopadhyay', 'Tonni', 21, '91939803', '50', '3', 'Uttara', 'Dhaka', '1230', 'Dhaka', '2020-04-15', 'released', '2020-04-19', 'no', 'dead'),
-(10, 'Ahmed', 'Moeen', 31, '1930903', '', '', 'Mohakhali', 'Dhaka', '1212', '', '2020-04-09', 'released', '2020-04-12', 'no', 'alive'),
-(11, 'Azad', 'Humayun', 70, '303840991', '', '', 'Baridhara', 'Dhaka', '1212', '', '2020-04-04', 'admitted', NULL, 'yes', 'alive'),
-(12, 'Azam', 'Golam', 81, '939839009', '30', '1', 'Tangail', 'Ghatail', '1980', '', '2020-04-16', 'admitted', NULL, 'no', 'dead'),
+(10, 'Ahmed', 'Moeen', 31, '1930903', '', '', 'Mohakhali', 'Dhaka', '1212', 'Dhaka', '2020-04-09', 'released', '2020-04-12', 'no', 'alive'),
+(11, 'Azad', 'Humayun', 70, '303840991', '', '', 'Baridhara', 'Dhaka', '1212', 'Dhaka', '2020-04-04', 'admitted', NULL, 'yes', 'alive'),
+(12, 'Azam', 'Golam', 81, '939839009', '30', '1', 'Tangail', 'Ghatail', '1980', 'Dhaka', '2020-04-16', 'admitted', NULL, 'no', 'dead'),
 (13, 'Mannan', 'Abdul', 41, '50390903', '33', '1', 'Dhaka', 'Gazipur', '1702', 'Dhaka', '2020-04-07', 'admitted', NULL, 'no', 'dead'),
-(14, 'Hossain', 'Moazzen', 55, '90390330', '', '', 'Dhaka', 'Kishoreganj', '2300', '', '2020-04-15', 'admitted', NULL, 'yes', 'alive'),
+(14, 'Hossain', 'Moazzen', 55, '90390330', '', '', 'Dhaka', 'Kishoreganj', '2300', 'Dhaka', '2020-04-15', 'admitted', NULL, 'yes', 'alive'),
 (15, 'Mamun', 'Muntasie', 58, '5390903', '5', '1', 'Rangpur', 'Nilphamari', '5300', 'Rangpur', '2020-04-12', 'admitted', NULL, 'yes', 'dead'),
-(16, 'Islam', 'Mirajul', 50, '60960009', '', '', 'Dhaka', 'Manikganj', '1801', '', '2020-04-12', 'released', '2020-04-19', '', 'alive'),
-(17, 'Rahman', 'Latifur', 61, '95908585', '', '', 'Khulna', 'Jessore', '7400', '', '2020-04-02', 'released', '2020-04-09', '', 'alive'),
+(16, 'Islam', 'Mirajul', 50, '60960009', '', '', 'Dhaka', 'Manikganj', '1801', 'Dhaka', '2020-04-12', 'released', '2020-04-19', '', 'alive'),
+(17, 'Rahman', 'Latifur', 61, '95908585', '', '', 'Khulna', 'Jessore', '7400', 'Khulna', '2020-04-02', 'released', '2020-04-09', '', 'alive'),
 (18, 'Rahman', 'Zillur', 41, '65757595', '', '', 'Rajshahi', 'Pabna', '6600', 'Rajshahi', '2020-04-03', 'released', '2020-04-15', '', 'dead'),
-(19, 'Sattar', 'Abdus', 72, '959587585', '2', '1', 'Dhaka', 'Baridhara', '1212', '', '2020-04-15', 'released', '2020-04-19', '', 'dead'),
-(20, 'Yunus', 'Mohammad', 53, '858588505', '', '', 'Barisal', 'Jhalokati', '8400', '', '2020-04-09', 'released', '2020-04-12', '', 'alive');
-
+(19, 'Sattar', 'Abdus', 72, '959587585', '2', '1', 'Dhaka', 'Baridhara', '1212', 'Dhaka', '2020-04-15', 'released', '2020-04-19', '', 'dead'),
+(20, 'Yunus', 'Mohammad', 53, '858588505', '', '', 'Barisal', 'Jhalokati', '8400', 'Barisal', '2020-04-09', 'released', '2020-04-12', '', 'alive');
 -- --------------------------------------------------------
 
 --
