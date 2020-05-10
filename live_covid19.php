@@ -47,7 +47,7 @@ foreach ($result as $peopleData) {
 	<link rel="stylesheet" type="text/css" href="../css/cssTable/util.css">
 	<link rel="stylesheet" type="text/css" href="../css/csstable/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         #chart_container{
             position: relative;
@@ -62,10 +62,11 @@ foreach ($result as $peopleData) {
 </head>
 
 <body>
-    <!-- Page Preloder -->
+    <!-- Page Preloder
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    <!--
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load("current", {packages:['corechart']});
@@ -101,7 +102,7 @@ foreach ($result as $peopleData) {
         chart.draw(view, options);
     }
     </script>
-
+   -->
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
@@ -146,9 +147,13 @@ foreach ($result as $peopleData) {
                             <i class="fa fa-search"></i>
                         </div>
                         <div class="to-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+
+                            <a href="#" class="fb-xfbml-parse-ignore"><i class="fa fa-facebook"></i></a>
+
                             <a href="#"><i class="fa fa-twitter"></i></a>
+
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            
                             <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
@@ -161,7 +166,6 @@ foreach ($result as $peopleData) {
     </header>
     <!-- Header End -->
 
-    <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="../image/relief7.jpg">
         <div class="container">
             <div class="row">
@@ -173,228 +177,367 @@ foreach ($result as $peopleData) {
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/masonry.pkgd.min.js"></script>
+    <script src="../js/jquery.barfiller.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
 
-    <!-- BMI Calculator Section Begin -->
-    <!--section class="bmi-calculator-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title chart-title">
-                        <h3 style = "color:black;">Today live status</h3>
-                    </div>
-                    <div class="chart-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Today Critical Case</th>
-                                    <th>Today Recovered Case</th>
-                                    <th>Today death</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!--?php
-                                   include 'database.php';
-                                   $pdo = Database::connect();
-                                   echo '<tr>';
-                                   $sql = "SELECT count(*) as today_critical from patient_info where admission_date = curdate() and admission_status = 'admitted' and critical_status = 'yes'";
-                                       foreach ($pdo->query($sql) as $row) {
-                                            echo '<td class="point">' . $row['today_critical'] . "</td>";
-                                        }
-                                        $sql = "SELECT count(*) as today_recovered from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'alive'";
-                                            foreach ($pdo->query($sql) as $row) {
-                                                 echo '<td class="point">' . $row['today_recovered'] . "</td>";
-                                             }
-                                             $sql = "SELECT count(*) as today_death from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'dead'";
-                                                 foreach ($pdo->query($sql) as $row) {
-                                                      echo '<td class="point">' . $row['today_death'] . "</td>";
-                                                  }
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="graphite.js"></script>
+    <script src="bar_chart.js"></script>
 
-                                    echo '</tr>';
-                              ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!--div class="col-lg-6">
-                    <div class="section-title chart-calculate-title">
-<!--                        <span>check your body</span>
-                        <h3 style = "color:black;">Distributed Food Per Division (%)</h3>
-                    </div>
-                    <div class="chart-calculate-form">
-<!--                        <p style = "color:black;">Distributed Food Per District (%)</p>
-                         <div id="chart_container" class="centre">
-                            <div id="pie-chart" class="chart-div"></div>
-                        </div>
-                    </div>
-                </div
-            </div>
-        </div>
-    </section -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Element", "Density", { role: "style" } ],
+          ["", 50, "orange"],
+          ["", 90, "orange"],
+          ["", 140, "orange"],
+          ["", 200, "color: orange"],
+          ["", 500, "color: orange"],
+          ["", 740, "color: orange"],
+          ["", 960, "color: orange"]
+        ]);
 
-    <!-- BMI Calculator Section End -->
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
 
-    <!-- Table -->
+        var options = {
+          title: "Chart of Covid-19 data, in days(5)/(critical cases)",
+          width: 600,
+          height: 400,
+          bar: {groupWidth: "95%"},
+          legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+    </script>
     	<div id="wrapper">
-            <div id="three-column" class="container">
-				<div class="title">
-					<h2>Covid-19 Live Data</h2>
-					<p style="font-size: 24px;color: #757575; padding-top: 20px;">All information about Covid-19 data can be found here.</p>
-				</div>
-
-				<div class="container">
-                    <div class="row">
-                        <div class="chart-table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                      <th class="column100 column1" data-column="column1">Total Active Case</th>
-                                      <th class="column100 column1" data-column="column2">Total Critical Case</th>
-                                      <th class="column100 column1" data-column="column3">Total Recover Case</th>
-                                      <th class="column100 column1" data-column="column4">Total Death</th>
-                                      <th class="column100 column1" data-column="column5">Total Critical Case in Divison</th>
-                                      <th class="column100 column1" data-column="column6">Total Critical case in District</th>
-                                      <th class="column100 column1" data-column="column7">Total Critical case in Thana</th>
-                                      <!--th class="column100 column1" data-column="column8">Today Critical Case</th>
-                                      <th class="column100 column1" data-column="column9">Today Recovered Case</th>
-                                      <th class="column100 column1" data-column="column10" style="padding-right: 200px;">Today Death Case</th -->
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    include 'database.php';
-                                    $pdo = Database::connect();
-                                       $sql = "SELECT count(*) as active from patient_info where admission_status = 'admitted'";
-                                       //$row = $pdo->query($sql);
-                                       echo '<tr>';
-                                           foreach ($pdo->query($sql) as $row) {
-
-                                                echo '<td class="point">' . $row['active'] . "</td>";
-                                                //echo '<td class="point">' . $row['district'] . "</td>";
-                                              //  echo '<td class="point">' . $row['upazilla'] . "</td>";
-                                              //  echo '<td class="point" style="text-align:center;padding: 7px 0 7px 0px;">' . $row['relief'] . "</td>";
-                                                //echo '<td class="point" style="text-align:center;padding: 7px 0 7px 0px;">' . $row['fam'] . "</td>";
-
-                                            }
-
-                                        $sql = "SELECT count(*) as critical from patient_info where admission_status = 'admitted' and critical_status = 'yes'";
-                                            foreach ($pdo->query($sql) as $row) {
-                                                 echo '<td class="point">' . $row['critical'] . "</td>";
-                                             }
-                                       $sql = "SELECT count(*) as recovered from patient_info where admission_status = 'released' and living_status = 'alive'";
-                                                 foreach ($pdo->query($sql) as $row) {
-                                                      echo '<td class="point">' . $row['recovered'] . "</td>";
-                                                  }
-                                        $sql = "SELECT count(*) as death from patient_info where admission_status = 'released' and living_status = 'dead'";
-                                                  foreach ($pdo->query($sql) as $row) {
-                                                     echo '<td class="point">' . $row['death'] . "</td>";
-                                                  }
-                                      $sql = "SELECT COUNT(DISTINCT division) as division, count(distinct district) as district, count(distinct thana) as thana from patient_info where critical_status = 'yes'";
-                                                  foreach ($pdo->query($sql) as $row) {
-                                                     echo '<td class="point">' . $row['division'] . "</td>";
-                                                     echo '<td class="point">' . $row['district'] . "</td>";
-                                                     echo '<td class="point">' . $row['thana'] . "</td>";
-                                                  }
-
-                                             echo '</tr>';
-                                      //  Database::disconnect();
-                                      ?>
-                                    </tbody>
-                                </table>
-			                 </div>
-                            </div>
-                        </div>
-                    </div>
+        <div id="three-column" class="container">
+          <div class="title">
+            <h2>Covid-19 Live Data</h2>
+            <p style="font-size: 24px;color: #757575; padding-top: 20px;">All information about Covid-19 data can be found here.</p>
+          </div>
 
 
-                    <div class="container">
-                      <div class="row">
-                          <div class="col-lg-6">
-                              <div class="section-title chart-title">
-                                  <h3 style = "color:black;">Today live status</h3>
-                              </div>
-                              <div class="chart-table">
-                                  <table>
-                                      <thead>
-                                          <tr>
-                                              <th>Today Critical Case</th>
-                                              <th>Today Recovered Case</th>
-                                              <th>Today death</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <?php
-                                          //   include 'database.php';
-                                          //  $pdo = Database::connect();
-                                             echo '<tr>';
-                                             $sql = "SELECT count(*) as today_critical from patient_info where admission_date = curdate() and admission_status = 'admitted' and critical_status = 'yes'";
-                                                 foreach ($pdo->query($sql) as $row) {
-                                                      echo '<td class="point">' . $row['today_critical'] . "</td>";
-                                                  }
-                                                  $sql = "SELECT count(*) as today_recovered from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'alive'";
-                                                      foreach ($pdo->query($sql) as $row) {
-                                                           echo '<td class="point">' . $row['today_recovered'] . "</td>";
-                                                       }
-                                                       $sql = "SELECT count(*) as today_death from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'dead'";
-                                                           foreach ($pdo->query($sql) as $row) {
-                                                                echo '<td class="point">' . $row['today_death'] . "</td>";
-                                                            }
+        <div class="row">
+          <div class="chart-table" style="padding-left: 70px;">
+          <table id="live_status">
+              <thead>
+                  <tr>
+                    <th class="column100 column1" data-column="column1">Total Active Case</th>
+                    <th class="column100 column1" data-column="column2">Total Critical Case</th>
+                    <th class="column100 column1" data-column="column3">Total Recover Case</th>
+                    <th class="column100 column1" data-column="column4">Total Death</th>
+                    <!--<th class="column100 column1" data-column="column5">Total Critical Case in Divison</th>
+                    <th class="column100 column1" data-column="column6">Total Critical case in District</th>
+                    <th class="column100 column1" data-column="column7">Total Critical case in Thana</th>
+                    <th class="column100 column1" data-column="column8">Today Critical Case</th>
+                    <th class="column100 column1" data-column="column9">Today Recovered Case</th>
+                    <th class="column100 column1" data-column="column10" style="padding-right: 200px;">Today Death Case</th -->
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td class="point"></td>
+                      <td class="point"></td>
+                      <td class="point"></td>
+                      <td class="point"></td>
+                  </tr>
+              </tbody>
+              </table>
+             <script>
+              var interval    =   0;
+              function start1(){
+                  setTimeout( function(){
+                      ajax_function1();
+                      interval    =   5;
+                      setInterval( function(){
+                          ajax_function1();
+                      }, interval * 1000);
+                  }, interval * 1000);
+              }
 
-                                              echo '</tr>';
-                                            //  Database::disconnect();
-                                        ?>
-                                      </tbody>
-                                  </table>
-                                  <!--div id="columnchart_values" style="width: 50px; height: 500px;padding-right:100px;"></div>
-                                  -->
-                              </div>
+              function ajax_function1(){
+                  $.ajax({
+                      url: "livestatus.php",
+                      context: document.body,
+                      success: function(result){
+                          var obj = JSON.parse(result);
 
+                          var datas = obj.response;
 
-                              </div>
-                              <div class="col-lg-6">
-                              <div class="section-title chart-title">
-                                <br>
-                                  <h3 style = "color:black;">Total critical case in Thana</h3>
+                          var options = '';
+                          //alert(datas[0]['affected']);
+                          var x=document.getElementById('live_status').rows[1].cells;
+                          x[0].innerHTML=datas[0]['active'];
+                          x[1].innerHTML=datas[0]['critical'];
+                          x[2].innerHTML=datas[0]['recovered'];
+                          x[3].innerHTML=datas[0]['deaths'];
 
-                                  <br>
-                                  <div class="chart-table">
-                                    <table>
-                                      <thead>
-                                          <tr>
-                                              <th>Name of Thana</th>
-                                              <th>Total</th>
-                                          </tr>
-                                      </thead>
-                                    </table>
-                                  </div>
-
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div id="columnchart_values" style="width: 50px; height: 300px;"></div>
-
-                          </div>
-
-                          </div>
-                        </div>
+                      }
+                  });
+              }
+              $(window).on("load", function (e) {
+                  start1();
+              });
 
 
+          </script>
+     </div>
+
+      </div>
+
+      </div>
+
+      <div id="three-column" class="container">
+        <div class="title">
+
+        </div>
+
+
+      <div class="row">
+        <div class="chart-table" style="padding-left:200px;">
+          <h2>Today Live Data</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th class="column100 column1" data-column="column1">Today Critical Case</th>
+                      <th class="column100 column1" data-column="column1">Today Recovered Case</th>
+                      <th class="column100 column1" data-column="column1">Today death</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <?php
+                     include 'database.php';
+                    $pdo = Database::connect();
+                     echo '<tr>';
+                     $sql = "SELECT count(*) as today_critical from patient_info where admission_date = curdate() and admission_status = 'admitted' and critical_status = 'yes'";
+                         foreach ($pdo->query($sql) as $row) {
+                              echo '<td class="point">' . $row['today_critical'] . "</td>";
+                          }
+                          $sql = "SELECT count(*) as today_recovered from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'alive'";
+                              foreach ($pdo->query($sql) as $row) {
+                                   echo '<td class="point">' . $row['today_recovered'] . "</td>";
+                               }
+                               $sql = "SELECT count(*) as today_death from patient_info where admission_date = curdate() and admission_status = 'released' and living_status = 'dead'";
+                                   foreach ($pdo->query($sql) as $row) {
+                                        echo '<td class="point">' . $row['today_death'] . "</td>";
+                                    }
+
+                      echo '</tr>';
+                      Database::disconnect();
+                ?>
+              </tbody>
+          </table>
+
+   </div>
+
+    </div>
+
+    </div>
+
+
+    <div id="three-column" class="container">
+      <div class="title">
+
+      </div>
+
+
+    <div class="row">
+      <div class="chart-table" style="padding-left:100px;">
+        <h2>Total Critical Case in Divison</h2>
+        <table id="live_status_division">
+            <thead>
+                <tr>
+                  <th class="column100 column1" data-column="column1">Name Of Division</th>
+                  <th class="column100 column1" data-column="column2">Total</th>
+                 </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="point"></td>
+                    <td class="point"></td>
+                </tr>
+            </tbody>
+            </table>
+            <script>
+             var interval    =   0;
+             function start2(){
+                 setTimeout( function(){
+                     ajax_function2();
+                     interval    =   5;
+                     setInterval( function(){
+                         ajax_function2();
+                     }, interval * 1000);
+                 }, interval * 1000);
+             }
+
+             function ajax_function2(){
+                 $.ajax({
+                     url: "livedivisionstatus.php",
+                     context: document.body,
+                     success: function(result){
+                         var obj = JSON.parse(result);
+
+                         var datas = obj.response;
+
+                         var options = '';
+                         //alert(datas[0]['affected']);
+
+                         $("#live_status_division > tbody").empty();
+
+                         var tableRef = document.getElementById('live_status_division').getElementsByTagName('tbody')[0];
+                         jQuery.each(datas, function(i, val) {
+                             // Insert a row in the table at the last row
+                             var newRow   = tableRef.insertRow();
+
+                             // Insert a cell in the row at index 0
+                             var newCell  = newRow.insertCell(0);
+
+                             // Append a text node to the cell
+                             var newText  = document.createTextNode(datas[i]['name']);
+                             newCell.appendChild(newText);
+                             // Insert a cell in the row at index 0
+                             var newCell  = newRow.insertCell(1);
+
+                             // Append a text node to the cell
+                             var newText  = document.createTextNode(datas[i]['active']);
+                             newCell.appendChild(newText);
+                            // $("#" + i).append(document.createTextNode(" - " + val));
+                         });
 
 
 
-                      </div>
+                     }
+                 });
+             }
+             $(window).on("load", function (e) {
+                 start2();
+             });
 
 
-                    </div>
+         </script>
 
-                </div>
-     <!-- Table -->
+ </div>
 
-      <br>
-      <br>
-      <br>
-      <br>
+    <div id="columnchart_values" style="width: 50px; height: 300px;"></div>
+  </div>
+
+
+  </div>
+
+  <div id="three-column" class="container">
+    <div class="title">
+
+    </div>
+
+
+  <div class="row">
+    <div class="chart-table" style="padding-left:100px;">
+      <h2>Total Critical Case in Thana</h2>
+      <table id="live_status_thana">
+          <thead>
+              <tr>
+                <th class="column100 column1" data-column="column1">Name Of Thana</th>
+                <th class="column100 column1" data-column="column2">Total</th>
+               </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td class="point"></td>
+                  <td class="point"></td>
+              </tr>
+          </tbody>
+          </table>
+         <script>
+          var interval    =   0;
+          function start3(){
+              setTimeout( function(){
+                  ajax_function3();
+                  interval    =   5;
+                  setInterval( function(){
+                      ajax_function3();
+                  }, interval * 1000);
+              }, interval * 1000);
+          }
+
+          function ajax_function3(){
+              $.ajax({
+                  url: "livethanastatus.php",
+                  context: document.body,
+                  success: function(result){
+                      var obj = JSON.parse(result);
+
+                      var datas = obj.response;
+
+                      var options = '';
+                      //alert(datas[0]['affected']);
+
+                      $("#live_status_thana > tbody").empty();
+
+                      var tableRef = document.getElementById('live_status_thana').getElementsByTagName('tbody')[0];
+                      jQuery.each(datas, function(i, val) {
+                          // Insert a row in the table at the last row
+                          var newRow   = tableRef.insertRow();
+
+                          // Insert a cell in the row at index 0
+                          var newCell  = newRow.insertCell(0);
+
+                          // Append a text node to the cell
+                          var newText  = document.createTextNode(datas[i]['name']);
+                          newCell.appendChild(newText);
+                          // Insert a cell in the row at index 0
+                          var newCell  = newRow.insertCell(1);
+
+                          // Append a text node to the cell
+                          var newText  = document.createTextNode(datas[i]['active']);
+                          newCell.appendChild(newText);
+                         // $("#" + i).append(document.createTextNode(" - " + val));
+                      });
+
+
+
+                  }
+              });
+          }
+          $(window).on("load", function (e) {
+              start3();
+          });
+
+
+      </script>
+
+
+
+
+</div>
+
+      <div id="columnchart_values1" style="width: 50px; height: 300px;"></div>
+</div>
+
+</div>
+
+
+
+      </div>
+
+      </div>
+
+
         <!-- Footer Section Begin -->
     <section class="footer-section">
         <div class="container">
@@ -482,5 +625,61 @@ foreach ($result as $peopleData) {
         }
     </script>
 
+    <script type="text/javascript">
+      google.charts.load("current", {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Element", "Density", { role: "style" } ],
+          ["", 4, "orange"],
+          ["", 5, "orange"],
+          ["", 12, "orange"],
+          ["", 17, "color: orange"],
+          ["", 25, "color: orange"],
+          ["", 33, "color: orange"],
+          ["", 35, "color: orange"]
+        ]);
+        var data1 = google.visualization.arrayToDataTable([
+          ["Element", "Density", { role: "style" } ],
+          ["", 1, "orange"],
+          ["", 3, "orange"],
+          ["", 4, "orange"],
+          ["", 7, "color: orange"],
+          ["", 5, "color: orange"],
+          ["", 3, "color: orange"],
+          ["", 5, "color: orange"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        var view1 = new google.visualization.DataView(data1);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+
+        var options = {
+          title: "Chart of Covid-19 data, in day/(critical cases)",
+          width: 600,
+          height: 400,
+          bar: {groupWidth: "95%"},
+          legend: { position: "none" },
+        };
+        var options1 = {
+          title: "Chart of Covid-19 data, in day/(death cases)",
+          width: 600,
+          height: 400,
+          bar: {groupWidth: "95%"},
+          legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values1"));
+        chart.draw(view1, options1);
+    }
+    </script>
+
   </body>
 </html>
+
